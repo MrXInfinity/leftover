@@ -17,8 +17,10 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->longText("description");
             $table->string("ingredients");
-            $table->string("cooking_type");
-            $table->string("cooking_time")->nullable();
+            $table->string("cooking_type")->nullable();
+            $table->integer("duration")->nullable();
+            $table->string("origin")->nullable();
+            $table->longText("steps");
             $table->timestamps();
         });
     }

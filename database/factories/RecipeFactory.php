@@ -16,12 +16,20 @@ class RecipeFactory extends Factory
      */
     public function definition(): array
     {
+
+        $foodchoices = ["Cookies", "Fried Chicken", "Braised Pork", "Chicken Curry", "Tikka Masala"];
+        $foodOrigin = ["Philippines", "Southeast Asia", "Japan", "Korea", "China"];
+        $foodSteps =  "This is step 1, This is step 2, This is step 3, This is step 4, This is step 5, This is step 6, This is step 7";
+
         return [
-            "name" => fake()->name(),
-            "description" =>fake()->paragraph(2),
+            "name" => $foodchoices[fake()->biasedNumberBetween(0, count($foodchoices) - 1) ],
+            "description" =>fake()->paragraph(5),
             "ingredients" => "food, cooking, bake",
             "cooking_type" => "stir fry",
-            "cooking_time" => "30"
+            "duration" => 30,
+            "origin" => $foodOrigin[fake()->biasedNumberBetween(0, count($foodOrigin) - 1) ],
+            "steps" => $foodSteps
+
         ];
     }
 }

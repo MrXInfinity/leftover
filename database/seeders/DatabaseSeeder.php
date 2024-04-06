@@ -19,10 +19,21 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => 'password'
         ]);
 
         Recipe::factory(5)->create([
             "user_id" => $user->id
+        ]);
+
+        $userTwo = User::factory()->create([
+            'name' => 'Test User 2',
+            'email' => 'test2@example.com',
+            'password' => 'password'
+        ]);
+
+        Recipe::factory(3)->create([
+            "user_id" => $userTwo->id
         ]);
     }
 }

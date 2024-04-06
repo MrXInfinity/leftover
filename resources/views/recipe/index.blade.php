@@ -1,15 +1,15 @@
 <x-layout>
+  <x-search />
 
-    <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-4 w-full">
 
-          @unless(count($listings) == 0)
-
-          @foreach($listings as $listing)
-          <x-listing-card :listing="$listing" />
+          @unless(count($recipes) == 0)
+          @foreach($recipes as $recipe)
+          <x-card :data="$recipe" />
           @endforeach
 
           @else
-          <p>No listings found</p>
+          <p>No Recipes Yet...</p>
           @endunless
 
   </div>

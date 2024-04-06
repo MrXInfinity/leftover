@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LeftOvers</title>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+        @vite('resources/css/app.css')
+    <title>Leftovers</title>
 </head>
 <body>
-    <header>hello</header>
-    <main>
-        {{$slot}}
+    <x-navigation />
+    <main class="flex justify-center  overflow-hidden" >
+        <section class="flex flex-col items-center max-w-7xl w-full p-8">
+            {{$slot}}
+        </section>
     </main>
+    <x-snackbar/>
 </body>
 </html>
